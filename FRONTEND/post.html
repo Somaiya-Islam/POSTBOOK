@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postbook</title>
+    <link rel="stylesheet" href="postStyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Hello, <span id="logged-username"> Username</span> </h1>
+        <button onclick="logOut()" class="logoutbtn">Logout</button>
+    </header>
+    
+    <section id="add-post-container">
+        <article>
+        <h2>Add New Post</h2>
+
+        <div>
+            <textarea name="" 
+            id="newPost-text"
+            cols="60" 
+            rows="5"
+            placeholder="Add post text"
+            ></textarea>
+        </div>
+
+        <div>
+            <input type="text"
+            id="newPost-image"
+            placeholder="Add post Image URL"
+            />
+        </div>
+        <div>
+            <button onclick="handleAddNewPost()" class="addPost-btn">Post</button>
+        </div>
+    </article>
+    </section>
+
+    <section id="post-container">
+
+        <!-- post -->
+         <div class="post">
+            <div class="post-header">
+                <div class="post-user-image">
+                    <img src="https://i.ibb.co/wcYHDMx/20230812-111850-1.jpg" alt="post-user-image"
+                    />
+                    </div>
+
+               
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="posted-time">
+                       <span>13</span>
+                       <span>hours ago</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="post-text">
+<p classs = "post-text-content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quo ducimus eaque ratione ea, perspiciatis debitis, dolorem accusantium unde excepturi omnis? Sed vel, alias perspiciatis fugiat sint quod accusantium cum.
+</p>
+            </div>
+            <div class="post-image">
+                <img src="https://i.ibb.co/Jnt7q2F/IMG-20230125-WA0024.jpg" alt="post-image">
+            </div>
+            <!-- comment under a single post -->
+
+            <div class="comment-holder">
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+            </div>
+             <!-- new comment input field -->
+              <div class="postComment-holder">
+                <div class="post-comment-input-field-holder">
+                    <input type="text" placeholder="Post your comment" class="postComment-input-field" id="postComment-input-for-postId1"/>
+                </div>
+                <div class="comment-btn-holder">
+                    <button id="comment-btn" class="postComment-btn">Comment</button>
+                </div>
+              </div>
+
+
+         </div>
+         
+        <!-- post -->
+        <div class="post">
+            <div class="post-header">
+                <div class="post-user-image">
+                    <img src="https://i.ibb.co/wcYHDMx/20230812-111850-1.jpg" alt="post-user-image"
+                    />
+                    
+                </div>
+               
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="posted-time">
+                       <span>13</span>
+                       <span>hours ago</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="post-text">
+<p class="post-text-content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quo ducimus eaque ratione ea, perspiciatis debitis, dolorem accusantium unde excepturi omnis? Sed vel, alias perspiciatis fugiat sint quod accusantium cum.
+</p>
+            </div>
+            <div class="post-image">
+                <img src="https://i.ibb.co/Jnt7q2F/IMG-20230125-WA0024.jpg" alt="post-image">
+            </div>
+            <!-- comment under a single post -->
+
+            <div class="comment-holder">
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+            </div>
+             <!-- new comment input field -->
+              <div class="postComment-holder">
+                <div class="post-comment-input-field-holder">
+                    <input type="text" placeholder="Post your comment" class="postComment-input-field" id="postComment-input-for-postId1"/>
+                </div>
+                <div class="comment-btn-holder">
+                    <button id="comment-btn" class="postComment-btn">Comment</button>
+                </div>
+              </div>
+
+
+         </div>
+         
+        <!-- post -->
+        <div class="post">
+            <div class="post-header">
+                <div class="post-user-image">
+                    <img src="https://i.ibb.co/wcYHDMx/20230812-111850-1.jpg" alt="post-user-image"
+                    />
+                    
+                </div>
+               
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="posted-time">
+                       <span>13</span>
+                       <span>hours ago</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="post-text">
+<p class="post-text-content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quo ducimus eaque ratione ea, perspiciatis debitis, dolorem accusantium unde excepturi omnis? Sed vel, alias perspiciatis fugiat sint quod accusantium cum.
+</p>
+            </div>
+            <div class="post-image">
+                <img src="https://i.ibb.co/Jnt7q2F/IMG-20230125-WA0024.jpg" alt="post-image">
+            </div>
+            <!-- comment under a single post -->
+
+            <div class="comment-holder">
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://i.ibb.co/3zCZ7H5/IMG-20230915-WA0050.jpg" alt="comment-user-image">
+                    </div>
+                    <div class="comment-text-container">
+                        <h4>Commented Username</h4>
+                        <p class="comment-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ducimus eum asperiores animi blanditiis facere ab quibusdam nam, omnis quae eligendi quod dolores libero quam natus voluptas fuga ipsam voluptate.</p>
+                    </div>
+                </div>
+            </div>
+             <!-- new comment input field -->
+              <div class="postComment-holder">
+                <div class="post-comment-input-field-holder">
+                    <input type="text" placeholder="Post your comment" class="postComment-input-field" id="postComment-input-for-postId1"/>
+                </div>
+                <div class="comment-btn-holder">
+                    <button id="comment-btn" class="postComment-btn">Comment</button>
+                </div>
+              </div>
+
+
+         </div>
+         </section>
+
+         <script src="./js/Utils/calculateTimeDifference.js"></script>
+         <script src="./js/fetchData.js"></script> 
+</body>
+</html>
